@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090817">
+  <meta name="description" content="WHAT IF JEEVIKA — A romantic seven-stage rescue adventure.">
+  <title>WHAT IF JEEVIKA | A Love Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="What If Jeevika home">
+        <span class="brand-symbol">✦</span>
+        <span>WHAT IF <strong>JEEVIKA</strong></span>
+      </a>
+      <div class="topbar-tag">
+        <span class="live-dot"></span>
+        A STORY ABOUT US
+      </div>
+    </header>
+
+    <section class="screen intro-screen active" id="introScreen">
+      <div class="intro-content">
+        <div class="eyebrow"><span>✧</span> A SEVEN-STAGE LOVE ADVENTURE <span>✧</span></div>
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit-core">♡</div>
+          <span class="orbit-star star-one">✦</span>
+          <span class="orbit-star star-two">✧</span>
+          <span class="orbit-star star-three">✦</span>
+        </div>
+        <h1>WHAT IF<br><span>JEEVIKA</span></h1>
+        <p class="hero-subtitle">What if the person you love disappeared...</p>
+        <p class="hero-description">
+          RITYAA is missing. Seven mysterious worlds stand between
+          JEEVIKA and the person she refuses to lose. Only their memories
+          can reveal the way forward.
+        </p>
+        <div class="name-chips">
+          <span>♡ JEEVIKA <small>Mumma</small></span>
+          <span>RITYAA <small>Betuu</small> ♡</span>
+        </div>
+        <button class="primary-button" id="startButton">
+          BEGIN THE SEARCH <span>→</span>
+        </button>
+        <p class="micro-copy">SEVEN STAGES. YOUR MEMORIES. ONE REUNION.</p>
+      </div>
+    </section>
+
+    <section class="screen game-screen" id="gameScreen">
+      <div class="game-heading">
+        <div>
+          <div class="eyebrow">THE SEARCH FOR RITYAA</div>
+          <h2 id="stageTitle">The Missing Signal</h2>
+        </div>
+        <div class="stage-counter">
+          <span id="stageNumber">01</span>
+          <span class="counter-divider">/</span>
+          <span>07</span>
+        </div>
+      </div>
+
+      <div class="progress-track" aria-label="Adventure progress">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="stage-dots" id="stageDots" aria-label="Stage progress"></div>
+
+      <article class="story-card" id="storyCard">
+        <div class="scene-art" id="sceneArt">
+          <div class="scene-moon"></div>
+          <div class="scene-glow"></div>
+          <div class="scene-symbol" id="sceneSymbol">☾</div>
+          <div class="scene-caption" id="sceneCaption">SOMEWHERE BEYOND YOUR WORLD</div>
+        </div>
+
+        <div class="story-content">
+          <div class="chapter-label" id="chapterLabel">CHAPTER ONE</div>
+          <h3 id="storyHeading">A message from nowhere.</h3>
+          <p class="story-text" id="storyText"></p>
+
+          <div class="memory-note" id="memoryNote">
+            <span class="note-icon">✧</span>
+            <p id="memoryText"></p>
+          </div>
+
+          <div class="challenge-panel">
+            <div class="challenge-topline">
+              <span class="challenge-icon" id="challengeIcon">⌁</span>
+              <span id="challengeType">MEMORY LOCK</span>
+            </div>
+            <h4 id="questionText"></h4>
+            <p class="question-detail" id="questionDetail"></p>
+
+            <form id="answerForm" autocomplete="off">
+              <label class="visually-hidden" for="answerInput">Your answer</label>
+              <input
+                id="answerInput"
+                name="answer"
+                type="text"
+                maxlength="180"
+                placeholder="Type your answer here..."
+                required
+                spellcheck="false"
+                aria-describedby="feedback"
+              >
+              <button class="primary-button answer-button" type="submit">
+                UNLOCK THE MEMORY <span>→</span>
+              </button>
+            </form>
+
+            <button class="hint-button" id="hintButton" type="button">
+              <span>✧</span> I NEED A LITTLE CLUE
+            </button>
+            <p class="hint-text" id="hintText" hidden></p>
+            <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="game-footer">
+        <span>MADE OF MEMORIES <span class="pink">♥</span></span>
+        <button class="text-button" id="restartButton" type="button">Restart this stage ↻</button>
+      </div>
+    </section>
+
+    <section class="screen ending-screen" id="endingScreen">
+      <div class="ending-content">
+        <div class="ending-sparkle">✦</div>
+        <div class="reunion-heart">♥</div>
+        <div class="eyebrow">AFTER SEVEN WORLDS</div>
+        <h2>You found<br><span>your RITYAA.</span></h2>
+        <p class="ending-story" id="endingStory">
+          Every world tried to keep you apart. But you remembered every
+          little thing that brought you here.
+        </p>
+        <div class="final-letter">
+          <span class="letter-top">A MESSAGE FOR JEEVIKA</span>
+          <p id="finalMessage"></p>
+          <span class="letter-heart">WITH LOVE, RITYAA ♥</span>
+        </div>
+        <button class="primary-button" id="playAgainButton">
+          RELIVE OUR STORY <span>↻</span>
+        </button>
+        <p class="micro-copy">SOME PEOPLE ARE WORTH EVERY WORLD.</p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>AN UNIVERSE BUILT FOR TWO</span>
+      <span>♥</span>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
